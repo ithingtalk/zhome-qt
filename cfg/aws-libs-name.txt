@@ -1,0 +1,34 @@
+[cmake] -- Found AWS SDK for C++, Version: 1.11.701, Install Root:/Volumes/crypt/qtproject/zhome-qml/thirdparty/osx, Platform Prefix:, Platform Dependent Libraries: pthread
+[cmake] -- Components specified for AWSSDK: core;cognito-idp;cognito-identity;sts;apigateway, application will be depending on libs: aws-cpp-sdk-cognito-idp;aws-cpp-sdk-cognito-identity;aws-cpp-sdk-sts;aws-cpp-sdk-apigateway;aws-cpp-sdk-core;aws-crt-cpp;aws-c-http;aws-c-mqtt;aws-c-cal;aws-c-auth;aws-c-common;aws-c-io;aws-checksums;aws-c-event-stream;aws-c-s3;aws-c-compression;aws-c-sdkutils;pthread
+[cmake] -- Try finding aws-cpp-sdk-core
+[cmake] -- Found Threads: TRUE
+[cmake] -- Found aws-cpp-sdk-core
+[cmake] -- Try finding aws-cpp-sdk-apigateway
+[cmake] -- Found aws-cpp-sdk-apigateway
+[cmake] -- Try finding aws-cpp-sdk-sts
+[cmake] -- Found aws-cpp-sdk-sts
+[cmake] -- Try finding aws-cpp-sdk-cognito-identity
+[cmake] -- Found aws-cpp-sdk-cognito-identity
+[cmake] -- Try finding aws-cpp-sdk-cognito-idp
+[cmake] -- Found aws-cpp-sdk-cognito-idp
+
+aws-cpp-sdk-cognito-idp
+aws-cpp-sdk-cognito-identity
+aws-cpp-sdk-sts
+aws-cpp-sdk-apigateway
+aws-cpp-sdk-core
+aws-crt-cpp
+aws-c-http
+aws-c-mqtt
+aws-c-cal
+aws-c-auth
+aws-c-common
+aws-c-io
+aws-checksums
+aws-c-event-stream
+aws-c-s3
+aws-c-compression
+aws-c-sdkutils
+pthread
+
+

@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" package="com.ithingtalk.zhome" android:installLocation="auto" android:versionCode="1" android:versionName="1.0">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.CAMERA" tools:ignore="PermissionImpliesUnsupportedChromeOsHardware"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <!--<uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>-->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO"/>
+    <!-- unlock screen when play video -->
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <!-- play music after screen locked -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO"/>
+    <!-- display medio controller in locked screen ? -->
+    <uses-permission android:name="android.permission.MEDIA_CONTENT_CONTROL" tools:ignore="ProtectedPermissions"/>
+
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true"/>
+    <application android:theme="@style/Theme.MyApplication" android:name="org.qtproject.qt.android.bindings.QtApplication" android:hardwareAccelerated="true" android:label="zhome" android:requestLegacyExternalStorage="true" android:allowBackup="true" android:fullBackupOnly="false" android:icon="@drawable/icon" android:supportsRtl="true">
+        <service android:name="org.qtproject.qt.android.bindings.QtService" android:enabled="true" android:exported="false" android:foregroundServiceType="mediaPlayback"/>
+
+        <!-- play music after screen locked -->
+        <service android:name=".PlaybackService" android:foregroundServiceType="mediaPlayback" android:exported="true">
+            <intent-filter>
+                <action android:name="androidx.media3.session.MediaSessionService"/>
+            </intent-filter>
+        </service>
+
+        <activity android:name="org.qtproject.qt.android.bindings.QtActivity" android:configChanges="orientation|uiMode|screenLayout|screenSize|smallestScreenSize|layoutDirection|locale|fontScale|keyboard|keyboardHidden|navigation|mcc|mnc|density" android:launchMode="singleTop" android:screenOrientation="portrait" android:exported="true" android:label="">
+            <!-- android:theme="@style/splashScreenTheme" -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.lib_name" android:value="appZhome"/>
+            <meta-data android:name="android.app.arguments" android:value=""/>
+        </activity>
+
+        <provider android:name="androidx.core.content.FileProvider" android:authorities="${applicationId}.qtprovider" android:exported="false" android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/qtprovider_paths"/>
+        </provider>
+
+    </application>
+<!-- %%INSERT_PERMISSIONS -->
+    <!-- %%INSERT_FEATURES -->
+
+<!--<uses-sdk tools:overrideLibrary="androidx.media3"/>-->
+
+<uses-permission android:name="android.permission.STATUS_BAR"/>
+<uses-feature android:name="android.software.status_bar"/>
+<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+
+</manifest>

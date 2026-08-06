@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<media-session xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:version="3">
+
+    <session>
+        <actions>
+            <action android:name="play"/>
+            <action android:name="pause"/>
+            <action android:name="skip_to_next"/>
+            <action android:name="skip_to_previous"/>
+        </actions>
+
+        <notification
+            android:color="#4CAF50"
+            android:visibility="visible">
+            <controls>
+                <control android:action="previous"/>
+                <control android:action="play_pause"/>
+            </controls>
+        </notification>
+    </session>
+</media-session>

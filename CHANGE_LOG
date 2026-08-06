@@ -1,0 +1,73 @@
+
+TODO：
+当网格不通时，启动慢，大概5秒才显示主界面
+
+2026-2-3:
+1 porting for ios,android,osx,windows,linux ok.
+2 change https file to http
+
+2026-1-20:
+windows local-link and p2p are both ok
+
+2025-9-16:
+qt6.9.2: add bind to udpsocket.
+
+2025-7-26:
+=====================================
+zhome-qml.0726-3.zip
+=====================================
+1 local connection final
+2 add AwsAccount and AwsDbService done
+3 aws-backend done 
+4 aws-sdk-cpp porting done
+5 other aws function is porting
+
+==================================================================================================
+
+2025-4-14:
+Image preview done
+
+2025-1-4:
+smartcfg done
+
+2024-12-7:
+1 SwipeView和StackView对比：
+使用 SwipeView 当你需要一个简单的水平滑动界面，例如图片浏览器或轮播图。
+使用 StackView 当你需要一个复杂的导航结构，例如应用程序的主界面导航，或者需要实现前进和后退功能的页面。
+
+2 使用qt quick 为所有平台写APP
+
+2024-12-5:
+Deploy auto:
+Add Customer build step:
+Command:            windeployqt
+Arguments:          --qmldir %{ActiveProject:NativePath}\src\QML\ %{ActiveProject:RunConfig:Executable:NativeFilePath}
+Working directory:  %{Qt:QT_INSTALL_BINS}
+
+2024-11-29：
+GRADLE_USER_HOME=~/.gradle
+
+2024-11-28:
+android compile, change follow files to fix speed issue:
+1 change build.gradle
+repositories {
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        google()
+    }
+
+2 change gradle-wrapper.properties
+distributionUrl=https\://mirrors.aliyun.com/macports/distfiles/gradle/gradle-8.10-bin.zip
+
+====================================
+External lib:
+1 streamer
+2 hip2p
+3 libvlc
+====================================
+
+
+README：
+iot无法正常连接问题解决: 重置NAS，重新配置，会更新AWS设备和IOT规则！
+

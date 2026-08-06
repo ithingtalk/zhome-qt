@@ -1,0 +1,5 @@
+<style name="MediaStyle" parent="Notification.Media">
+    <!--<item name="android:color">@color/primary_color</item>
+    <item name="android:notificationLargeIcon">@drawable/media_icon</item>
+    <item name="android:showActionsInCompactView">0,1,2</item>-->
+</style>
